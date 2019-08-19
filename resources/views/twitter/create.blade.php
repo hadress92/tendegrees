@@ -11,7 +11,9 @@
 </div>
 
 {!! Form::submit('Submit', ['class' => 'btn btn-info']) !!}
-
+<a href="{{url('/timeline/')}}" class="btn btn-primary">
+    Back to timeline
+</a>
 {!! Form::close() !!}
 
 @if ($errors->any())

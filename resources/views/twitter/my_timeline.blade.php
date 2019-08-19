@@ -6,6 +6,9 @@
         <a href="{{url('/timeline/')}}" class="btn btn-primary">
             Switch to timeline
         </a>
+        <a href="{{url('/tweet/')}}" class="btn btn-primary">
+            New Tweet
+        </a>
         </div>
         @foreach($tweets as $tweet)
             <div class="row">
