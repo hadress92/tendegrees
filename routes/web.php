@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['middleware' => 'auth'], function(){
+Route::get('tweet', 'TwitterController@createTweet')->name('twitter.createTweet');
+Route::get('/delete/tweet/{id}', 'TwitterController@deleteTweet')->name('twitter.deleteTweet');
+Route::post('tweet', 'TwitterController@sendTweet')->name('twitter.sendTweet');
+Route::get('timeline', 'TwitterController@viewTweets')->name('twitter.timeline');
+Route::get('/my/timeline', 'TwitterController@myTweets')->name('twitter.my_timeline');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
